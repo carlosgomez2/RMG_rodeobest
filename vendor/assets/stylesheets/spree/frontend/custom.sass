@@ -1,0 +1,243 @@
+// Imports
+@import "old_styles"
+@import "modules"
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:700|Didact+Gothic)
+
+// variables
+$space_padding: 7rem 0
+$pt: 'PT Sans', sans-serif
+$didact: 'Didact Gothic', sans-serif
+
+// New styles
+h1, h2, h3, h4, h5, h6
+  font-family: $pt !important
+  font-weight: 700
+
+p, body
+  font-family: $didact !important
+  font-weight: 400
+  color: $dark
+
+a
+  color: $primary
+  text-decoration: none
+  &:hover
+    text-decoration: none
+    color: $dark
+
+.shipping-free
+  background-color: black
+  font-size: 1.2rem
+  padding: 5px 0
+
+  p
+    margin: 0
+    font-weight: bold
+    color: $white
+
+.search-btn
+  background-color: $primary
+  border-color: $primary
+  &:hover
+    background-color: darken($primary, $amount)
+    border-color: darken($primary, $amount)
+
+#spree-header .nav a
+#spree-header .nav a:hover,
+#spree-header .nav a:focus
+  color: $dark !important
+
+#spree-header .nav a:hover,
+#spree-header .nav a:focus
+  background: $secondary
+
+.landing-background
+  border-radius: 6px
+  max-width: 1150px
+  margin: auto
+  width: 100%
+  height: 70vh
+  background:
+    image: url(rodeo_cover.jpg)
+    size: cover
+    position: center
+    repeat: no-repeat
+  margin-bottom: 20px
+
+// .panel-default
+//   border-color: $secondary
+//
+// .panel-footer
+//   border-top: 1px solid $secondary
+//   background-color: lighten($secondary, $amount_bg)
+
+.info
+  font-size: 1.7rem
+
+.price
+  color: $cta
+  font-weight: bold
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus
+  background-color: $secondary
+  border-color: $secondary
+
+.pagination > li > a, .pagination > li > span
+  color: darken($secondary, $amount)
+
+.pagination
+  li
+    a
+      padding: 12px 18px
+      font:
+        family: $pt
+        weight: 700
+        size: 1.3rem
+
+#subscribe
+  width: 100%
+  background-color: $dark
+  padding: $space_padding
+
+  .content-subscribe
+    margin: auto
+    padding: 1.2rem 20px
+    box-sizing: border-box
+    max-width: 1024px
+
+    p
+      text-align: center
+      font:
+        size: 1.7rem
+      color: $white
+      text-transform: uppercase
+      letter-spacing: 0.1rem
+      margin-bottom: 1.25rem
+      text-rendering: optimizeSpeed
+
+  #subscription_form
+    text-align: center
+
+    input
+      display: inline-block
+      border: 1px solid transparent
+      padding: 15px
+      margin: 0
+
+  #subscribe_email
+    background: $white
+    width: 40%
+
+  .submit_subscribe
+    background: $cta
+    color: white
+    font-weight: bold
+    width: 15%
+
+    &:hover
+      background: darken($cta, $amount)
+
+.copy
+  width: 100%
+  background-color: $dark
+
+  ul
+    li
+      padding-right: 15px
+
+  p
+    margin: 0
+    padding: 2.5rem 0
+    text-transform: uppercase
+    font-size: 1rem
+    color: $white
+
+#footer
+  padding: $space_padding
+
+  h3
+    color: $primary
+
+.footer_ul
+  padding: 0
+  margin: 0
+  .footer_li
+    color: $white
+    display: inline-block
+    text-transform: uppercase
+    font-size: 1rem
+    padding: 2.5rem 0
+    &:hover
+      font-weight: bold
+
+.mid_with
+  width: 49%
+  display: inline-block
+
+.copy_ph
+  float: right
+
+// checkout
+#summary-order-total
+  color: $cta
+  font-weight: 700
+
+[data-hook="homepage_products"]
+  padding: $space_padding
+
+// Media query's
+#header
+  @media (max-width: 768px)
+    padding-top: 20px
+    padding-bottom: 5px
+
+#search-bar
+  @media (max-width: 768px)
+    display: none
+
+#spree-header
+  @media (max-width: 768px)
+    margin: 0
+
+[data-hook="homepage_products"]
+  @media (max-width: 768px)
+    .col-xs-6,
+    .col-sm-6
+      margin: 0 auto
+      width: 100%
+
+.landing-background
+  @media (max-width: 768px)
+    width: 100%
+    height: 400px
+
+#subscribe_email,
+.submit_subscribe
+  @media (max-width: 768px)
+    width: 80% !important
+
+.mid_with
+  @media (max-width: 951px)
+    width: 100%
+    display: inline-block
+
+.copy
+  @media (max-width: 951px)
+    ul
+      li
+        padding-bottom: 8px
+        padding-right: 15px
+        &:last-child
+          padding-top: 8px
+          padding-right: 0
+    p
+      padding-top: 8px
+
+  @media (max-width: 320px)
+    ul
+      li
+        padding-top: 8px
+        &:first-child
+          padding-top: 25px
