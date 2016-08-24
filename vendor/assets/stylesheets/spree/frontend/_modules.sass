@@ -3,3 +3,31 @@
 
 .btn
   border-radius: none
+
+#breadcrumbs
+  .breadcrumb
+    width: auto
+    border-top: 1px solid #bcbaba
+    border-bottom: 1px solid #bcbaba
+    padding: 3px 15px
+    background-color: white
+    border-radius: none
+    li
+      padding-left: 20px
+      &:last-child
+        padding-right: 0px
+      &:first-child
+        padding-left: 0px
+      &::before
+        padding-right: 20px
+
+#add-to-cart-button
+  border-bottom-right-radius: 0
+  border-top-right-radius: 0
+  background-color: white
+  color: $cta
+  border: 1px solid $cta
+  border-color: $cta
+  &:hover
+    border-color: darken($secondary, $amount)
+    color: $cta
