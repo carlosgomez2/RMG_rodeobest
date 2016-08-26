@@ -42,7 +42,7 @@ Deface::Override.new(:virtual_path  => 'spree/layouts/spree_application',
         <% if current_page?(root_path) %>
           <section id='subscribe'>
             <div class='content-subscribe'>
-              <p>Subscribe to get the latest Rodeobest news </p>
+              <p>Subscribe to get the latest news from Rodeobest </p>
               <form id='subscription_form' class='subscription_form'>
                 <input id='subscribe_email' placeholder='Email' type='text'></input>
                 <input class='submit_subscribe' value='Subscribe' type='submit'></input>
@@ -52,13 +52,13 @@ Deface::Override.new(:virtual_path  => 'spree/layouts/spree_application',
 
         <!-- Footer -->
           <div id='footer' class='container'>
-            <div class='col-md-4'>
+            <div class='col-md-4 text-center'>
               <h3>Our Headquarters</h3>
               <p>Rodeo Avenue, Beverly Hills, Ca.</p>
               <p>Zip Code: 50000</p>
               <p>Phone: (555) 123 5678</p>
             </div>
-            <div class='col-md-4'>
+            <div class='col-md-4 text-center'>
               <h3>Get to Know Us</h3>
               <p>Our Story</p>
               <p>Our Team</p>
@@ -68,7 +68,7 @@ Deface::Override.new(:virtual_path  => 'spree/layouts/spree_application',
               <p>Shipping</p>
               <p>Payment Methods</p>
             </div>
-            <div class='col-md-4'>
+            <div class='col-md-4 text-center'>
               <h3>Social Network</h3>
               <p>
                 <%= link_to 'https://facebook.com' do%>
@@ -98,7 +98,7 @@ Deface::Override.new(:virtual_path  => 'spree/layouts/spree_application',
               <%= link_to 'Terms and Conditions', root_path, class: 'footer_li' %>
               <%= link_to 'Privacy Policy', root_path, class: 'footer_li' %>
             </ul>
-            <p class='mid_with text-center'> &copy; All Rights Reserved 2016 | Rodeobest RMG</p>
+            <p class='mid_with text-center'> &copy; All Rights Reserved 2016 | Rodeobest by RMG</p>
           </div>
         <% end %>
         ")

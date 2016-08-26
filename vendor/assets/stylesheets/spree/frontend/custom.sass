@@ -2,6 +2,7 @@
 @import "old_styles"
 @import "modules"
 @import "product"
+@import "header"
 
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:700|Didact+Gothic)
@@ -38,21 +39,24 @@ a
     font-weight: bold
     color: $white
 
+.nav li a
+  color: $dark
+  font-weight: bolder
+  border-radius: 0px
+  padding-top: 25px
+  padding-bottom: 25px
+
+.nav li a:hover,
+.nav li a:focus
+  background-color: darken($secondary, $amount)
+
+
 .search-btn
   background-color: $primary
   border-color: $primary
   &:hover
     background-color: darken($primary, $amount)
     border-color: darken($primary, $amount)
-
-#spree-header .nav a
-#spree-header .nav a:hover,
-#spree-header .nav a:focus
-  color: $dark !important
-
-#spree-header .nav a:hover,
-#spree-header .nav a:focus
-  background: $secondary
 
 .landing-background
   // border-radius: 6px
@@ -170,8 +174,11 @@ a
     text-transform: uppercase
     font-size: 1rem
     padding: 2.5rem 0
+    margin-right: 1rem
     &:hover
       font-weight: bold
+    &:last-child
+      margin-right: 0
 
 .mid_with
   width: 49%
@@ -194,9 +201,9 @@ a
     padding-top: 20px
     padding-bottom: 5px
 
-#search-bar
-  @media (max-width: 768px)
-    display: none
+// #search-bar
+//   @media (max-width: 768px)
+//     display: none
 
 #spree-header
   @media (max-width: 768px)
