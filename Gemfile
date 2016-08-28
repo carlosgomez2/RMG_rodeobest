@@ -18,12 +18,16 @@ gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: 'master'
 
+# Spree Static Content
+gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: '3-1-stable'
+
 # Spree Module Wishlist
 gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
 gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
 
 # Puma
 gem 'puma'
+
 
 group :development, :test do
   gem 'byebug'

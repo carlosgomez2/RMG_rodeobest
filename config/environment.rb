@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 # assets disabled Spree
-config.assets.debug = false
+# config.assets.debug = false

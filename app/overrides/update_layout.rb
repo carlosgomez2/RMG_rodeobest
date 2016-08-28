@@ -96,7 +96,7 @@ Deface::Override.new(:virtual_path  => 'spree/layouts/spree_application',
             <ul class='float-rigth footer_ul mid_with text-center'>
               <%= link_to 'Work with Us', root_path, class: 'footer_li' %>
               <%= link_to 'Terms and Conditions', root_path, class: 'footer_li' %>
-              <%= link_to 'Privacy Policy', root_path, class: 'footer_li' %>
+              <%= link_to 'Privacy Policy', localhost:3000/privacy_policy, class: 'footer_li' %>
             </ul>
             <p class='mid_with text-center'> &copy; All Rights Reserved 2016 | Rodeobest by RMG</p>
           </div>
