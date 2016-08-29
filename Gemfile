@@ -28,6 +28,9 @@ gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', bran
 # Puma
 gem 'puma'
 
+# Product Zoom
+gem "spree_product_zoom", :git => "git://github.com/spree/spree_product_zoom.git"
+
 
 group :development, :test do
   gem 'byebug'
