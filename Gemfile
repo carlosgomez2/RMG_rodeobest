@@ -25,8 +25,11 @@ gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch
 gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
 gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
 
-# Puma
-gem 'puma'
+# Capistrano
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 # Product Zoom
 gem "spree_product_zoom", :git => "git://github.com/spree/spree_product_zoom.git"
