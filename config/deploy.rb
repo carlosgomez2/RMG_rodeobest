@@ -1,14 +1,14 @@
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.6.1'
 
 set :application, 'RMG_rodeobest'
-set :repo_url, 'git@github.com:me/my_repo.git'
+set :repo_url, 'git@github.com:carlosgomez2/RMG_rodeobest.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/RMG_rodeobest'
+set :deploy_to, '/home/deployer/RMG_rodeobest'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -23,7 +23,7 @@ set :deploy_to, '/home/deploy/RMG_rodeobest'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -45,15 +45,13 @@ namespace :deploy do
   end
 
   after :publishing, :restart
-  # added
-  after :finishing, 'deploy:cleanup'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do
+        execute :rake, 'cache:clear'
+      end
     end
   end
 

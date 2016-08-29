@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.6'
-# gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'pg', '~> 0.18.4'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -25,15 +24,11 @@ gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch
 gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
 gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
 
-# Capistrano
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-gem 'capistrano-rbenv', github: "capistrano/rbenv"
-
-# Product Zoom
+# Spree Product Zoom
 gem "spree_product_zoom", :git => "git://github.com/spree/spree_product_zoom.git"
 
+# Passenger
+gem 'passenger', '~> 5.0', '>= 5.0.30'
 
 group :development, :test do
   gem 'byebug'
@@ -42,4 +37,9 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  # Capistrano
+  gem 'capistrano', '~> 3.5'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rails', '~> 1.1.1'
+  gem 'capistrano-rbenv', '~> 2.0', '>= 2.0.4'
 end
