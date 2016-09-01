@@ -67,4 +67,4 @@ namespace :images do
   end
 end
 
-after "bundle:install", "images:symlink"
+after "images:symlink"
