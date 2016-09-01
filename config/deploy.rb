@@ -49,22 +49,26 @@ namespace :deploy do
 
   after :publishing, :restart
 
+  # after :restart, :clear_cache do
+  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
+  #     # Here we can do anything such as:
+  #     # within release_path do
+  #     #   execute :rake, 'cache:clear'
+  #     # end
+  #   end
+  # end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      task :symlink, :exept => { :no_relase => true } do
+        run "rm -rf #{release_path}/public/spree"
+        run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+      end
     end
   end
 
 end
-
-namespace :images do
-  task :symlink, :exept => { :no_relase => true } do
-    run "rm -rf #{release_path}/public/spree"
-    run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
-  end
-end
-
-after "images:symlink"
