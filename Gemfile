@@ -41,8 +41,10 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   # Capistrano
-  gem 'capistrano', '~> 3.5'
+  gem 'capistrano', '~> 3.5', require: false
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-rbenv', '~> 2.0', '>= 2.0.4'
+
+  gem 'capistrano-rake', require: false
 end

@@ -12,7 +12,8 @@ set :rbenv_ruby, '2.3.1'
 
 require 'capistrano/bundler'
 require 'capistrano/rails'
-# require 'capistrano/passenger'
+
+require 'capistrano/rake'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
