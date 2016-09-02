@@ -42,6 +42,8 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
+      execute "rm -rf #{release_path}/public/spree"
+      execute "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
       # Your restart mechanism here, for example:
       execute :touch, release_path.join('tmp/restart.txt')
     end
@@ -55,8 +57,6 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      run "rm -rf #{release_path}/public/spree"
-      run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
     end
   end
 
