@@ -55,15 +55,9 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      run "rm -rf #{release_path}/public/spree"
+      run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
     end
   end
 
 end
-
-namespace :images do
-  task :symlink, :except => { :no_release => true } do
-    run "rm -rf #{release_path}/public/spree"
-    run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
-  end
-end
-after "bundle:install", "images:symlink"
